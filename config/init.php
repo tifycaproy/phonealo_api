@@ -12,7 +12,8 @@ error_reporting(E_ALL);
 //ini_set("display_errors", 1);
 
 define('rewrite_url', false);
-define('APIKEY', '***********************');
+#define('APIKEY', 'da39a3ee5e6b4b0d3255bfef95601890afd80709');
+define('APIKEY', 'c2fa6476b99184470ddd93427cc106cc22a07855');
 
 
 define('i18n', false);

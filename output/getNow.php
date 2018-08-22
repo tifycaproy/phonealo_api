@@ -7,11 +7,11 @@
             <div class="row">
                 <?php echo print_messages() ?>
             </div>
-            <h2 class="margin-bottom-50"><strong>Ups, algo no va bien :-(</strong> <span style="color: #D90A2C"> CALL53</span> </h2>
+            <h2 class="margin-bottom-50"><strong>Ups, algo no va bien :-(</strong> <span style="color: #D90A2C"> Phonealo</span> </h2>
             <div class="row">
 
                 <h3>
-                    Call53 solo está disponible para descargar desde un movil con Android o Iphone IOS
+                    Phonealo solo está disponible para descargar desde un movil con Android o Iphone IOS
                 </h3>
 
 

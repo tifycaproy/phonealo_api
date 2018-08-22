@@ -23,7 +23,7 @@ if (!is_null(pget("cardid"))) {
         );
         $usu_data['pay_amount'] = pget('pay_amount');
 
-        envia_mail('Recarga promocional CALL53', $template, $usu_data, $destinatarios );
+        envia_mail('Recarga promocional Phonealo', $template, $usu_data, $destinatarios );
 
     }
 

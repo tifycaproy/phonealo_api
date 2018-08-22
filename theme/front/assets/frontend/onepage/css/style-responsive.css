@@ -17,6 +17,7 @@
 
 	.header .mobi-toggler {
 		display: block;
+		margin-right: 30px;
 	}
 	.header-mobi-ext .header-navigation {
 		float: none;
@@ -217,15 +218,35 @@
 	}
 }
 @media (max-width: 480px) {
+	.pre-footer{
+		padding-left: 30px;
+	}
+	.prices-block{
+		height: 100%;
+	}
+	.py-xs-3{
+		padding: 0 2em;
+	}
+	.logo_an{
+	  margin-left: 10px;
+	}
 	.ab-cirlce {
 	  z-index: 3;
 	}
 	.ab-cirle-red {
 	  bottom: 36px;
 	}
+	.pre-footer-col{
+		padding-right: 0px;
+	}
 
 	.slider-item-1 .promo-like {
 		display: none;
+	}
+
+	.my-xs-2{
+		margin-left: 3em;
+		margin-right: 3em; 
 	}
 }
 @media (max-width: 400px) {

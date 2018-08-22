@@ -2,7 +2,7 @@
 <!--[if IE 8]> <html lang="es" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="es" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="es" style="height: 100%">
+<html lang="es" >
 <!--<![endif]-->
 <!-- Head BEGIN -->
 <head>
@@ -17,12 +17,12 @@
     <meta content="Cuba, LLamadas, Baratas, Bajo Precio" name="keywords">
     <meta content="Apel Global" name="author">
 
-    <meta property="og:site_name" content="CALL53 - Llamadas a Cuba a 0.46 REALES">
-    <meta property="og:title" content="Call53">
+    <meta property="og:site_name" content="Phonealo - Llamadas a Cuba a 0.46 REALES">
+    <meta property="og:title" content="Phonealo">
     <meta property="og:description" content="LLamadas a Cuba a 0,46">
     <meta property="og:type" content="article∫">
-    <meta property="og:image" content="http://www.call53.com/images/ic_launcher.png"><!-- link to image for socio -->
-    <meta property="og:url" content="www.call53.com">
+    <meta property="og:image" content="http://www.phonealo.com/images/ic_launcher.png"><!-- link to image for socio -->
+    <meta property="og:url" content="www.phonealo.com">
 
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Fonts START -->
@@ -79,12 +79,12 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
             <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
             <!-- Navigation BEGIN -->
             <div class="col-md-10 pull-right">
-                <ul class="header-navigation">
+                <ul class="header-navigation" style="text-transform: capitalize;">
                     <li><a href="https://www.phonealo.com">Phonealo</a></li>
-                    <li><a href="#faqs">Preguntas frecuentes</a></li>
+                    <li><a href="https://www.phonealo.com/questions">Preguntas frecuentes</a></li>
                     <li><a href="<?=str_replace('http:', 'https:', base_path);?>payment/init">Comprar Saldo</a></li>
                     <li><a href="<?=str_replace('http:', 'https:', base_path);?>balance">Ingresar</a></li>
-                    <li><a href="#benefits">Ventajas</a></li>
+                    <!-- <li><a href="#benefits">Ventajas</a></li> -->
                 </ul>
             </div>
             <!-- Navigation END -->

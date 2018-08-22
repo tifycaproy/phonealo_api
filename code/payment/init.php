@@ -66,7 +66,7 @@ if (isset($_POST['Ds_SignatureVersion'])) {
                 );
                 $usu_data['credit'] = number_format($decoded->{credit}, 2);
                 $usu_data['pay_amount'] = $pay_data['pay_amount'];
-                envia_mail('Todo Ok, ya puedes llamar con CALL53 ! ', $template, $usu_data, $destinatarios );
+                envia_mail('Todo Ok, ya puedes llamar con Phonealo ! ', $template, $usu_data, $destinatarios );
             }
 
         } else {
@@ -153,7 +153,7 @@ if (pget('faildata') && is_null(ppost('mobile'))) {
             $view = 'do';
 
         } else {
-            set_error('El teléfono no está registrado en CALL53');
+            set_error('El teléfono no está registrado en Phonealo');
         }
 
     }

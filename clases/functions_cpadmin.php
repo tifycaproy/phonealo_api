@@ -66,15 +66,15 @@ function envia_mail($subject, $mail_template, $data_mail, $destinatarios = 0, $f
     $mail->SMTPAuth = true;
     $mail->isSMTP();
 
-    $mail->FromName = 'Call53 la APP para llamar a Cuba';
+    $mail->FromName = 'Phonealo tu app para llamar';
     //$mail->SMTPSecure = 'tls';
-    $mail->Host = 'smtp.call53.com';
-    $mail->Username = 'call53@call53.com';
-    $mail->Password = 'Quericapera-16';
+    $mail->Host = 'smtp.phonealo.com';
+    $mail->Username = 'contact@Phonealo.com';
+    $mail->Password = 'Quericophonea.2018';
     $mail->Port = '25';
     //$mail->Port = '587';
 
-    $mail->From = 'call53@call53.com';
+    $mail->From = 'contact@phonealo.com';
 
     if (is_array($destinatarios)) {
         foreach ($destinatarios as $address) {

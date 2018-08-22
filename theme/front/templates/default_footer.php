@@ -1,50 +1,56 @@
 <!-- BEGIN PRE-FOOTER -->
-<div class="pre-footer" id="contact">
-    <div class="container">
-        <div class="row" style="width: 100%">
-            <!-- BEGIN BOTTOM ABOUT BLOCK -->
-            <div class=" col-xs-12 col-md-4 col-sm-6 pre-footer-col" id="about">
-                <h2>¿Qué es Phonealo ?</h2>
-                <p>Phonealo es una aplicación para hacer llamadas internacionales utilizando siempre las rutas de mejor calidad precio. </p>
-                <!-- <p><b>Compromiso 65 céntimos en llamadas a Cuba<br>Compromiso 10 céntimos en llamadas a Ecuador</b></p> -->
-            </div>
-            <!-- END BOTTOM ABOUT BLOCK -->
-            <!-- BEGIN TWITTER BLOCK -->
-            <div class="col-md-4 col-sm-6 pre-footer-col">
-                <h2 class="margin-bottom-0">Conecta con nosotros</h2>
-                <br>
-                <p>Síguenos en instagram: #phonealo_app </p>
-                <p>Encuéntranos en facebook: Phonealo.</p>
-                <p>Tambien en Twitter: @Phonealo1</p>
-            </div>
-            <!-- END TWITTER BLOCK -->
-            <div class="col-md-4 col-sm-6 pre-footer-col">
-                <!-- BEGIN BOTTOM CONTACTS -->
-                <h2>Contacta!</h2>
-                <address class="margin-bottom-20">
-                    B-Duc Mircea Cel Batran H5, Targoviste, Romania<br>
-                   <!--  Paterna, C.Valenciana ES<br>
-                    Teléfono: +34 680 849 212 <br>
-                    WhatsApp: +34 680 849 212 <br> -->
-                    Email:  <a href="mailto:contact@phonealo.com">contact@phonealo.com</a><br>
-                    Skype:  <a href="skype:phonealo app">Phonealo App</a>           
-                </address>
-                <!-- END BOTTOM CONTACTS -->
-                <div class="pre-footer-subscribe-box hidden">
-                    <h2>Newsletter</h2>
-                    <form action="javascript:void(0);">
-                        <div class="input-group">
-                            <input type="text" placeholder="youremail@mail.com" class="form-control">
-                <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-                </span>
+
+ <div class="" style="background: #192430; ">
+        <div class="container " style=" padding: 60px 30px">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-sm-6" style="font-size: 1.5rem; color: white">
+                    2018 © Phonealo - ALL Rights Reserved.
+                    <br>
+                    B-Duc Mircea Cel Batran H5, Targoviste, Romania
+                    <br>
+                    <b>Telefono: </b>+34 607333715
+                    <br>
+
+                </div>
+                <div class="col-xs-12  col-md-5 col-md-offset-1 col-sm-6" style="margin-top: 20px">
+                    <div class="row d-flex text-center justify-content-center justify-content-sm-end ">
+                        <div class="col-xs-1 col-sm-1">
+                            <a target="blank_" href="https://www.instagram.com/phonealo_app/" title="Instagram">
+                                <img src="https://www.phonealo.com/assets/ig_circle.svg" alt="" style="width: 100%">
+                            </a>
                         </div>
-                    </form>
+                        <div class="col-xs-1 col-sm-1">
+                            <a target="blank_" href="https://www.facebook.com/Phonealo-642900916095975/?modal=admin_todo_tour" title="Facebook">
+                                <img src="https://www.phonealo.com/assets/fb_circle.svg" alt="" style="width: 100%">
+                            </a>
+                        </div>
+                        <div class="col-xs-1 col-sm-1">
+                            <a target="blank_" href="#">
+                                <img src="https://www.phonealo.com/assets/tw_circle.svg" alt="@Phonealo1" style="width: 100%">
+                            </a>
+                        </div>
+                        <div class="col-xs-1 col-sm-1">
+                            <a target="blank_" href="skype:phonealo app">
+                                <img src="https://www.phonealo.com/assets/sk_circle.svg" alt="" style="width: 100%">
+                            </a>
+                        </div>
+                         <div class="col-xs-1 col-sm-1">
+                            <a target="blank_" href="https://t.me/phonealo">
+                                <img src="https://www.phonealo.com/assets/tg_circle.png" alt="" style="width: 100%"  class="">
+                            </a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
+          
+            <script language="JavaScript" type="text/javascript">
+                 TrustLogo("<?=base_path;?>images/comodo_secure_seal_76x26_transp.png", "CL1", "none");
+               </script>
+            <a href="https://www.positivessl.com/" id="comodoTL"></a>
         </div>
+
     </div>
-</div>
 <!-- END PRE-FOOTER -->
 <!-- <div class="footer">
     <div class="container">
@@ -107,11 +113,6 @@
 <?php endif; ?>
 
 <!-- Global js END -->
-<script language=“JavaScript” type=“text/javascript”>
-TrustLogo("http://www.phonealo.com/comodo_secure_seal_76x26_transp.png
-http://www.phonealo.com/comodo_secure_seal_76x26_transp.png
-", "CL1", "none");
-</script>
-<a  href="https://www.positivessl.com/" id="comodoTL"></a>
+
 </body>
 </html>

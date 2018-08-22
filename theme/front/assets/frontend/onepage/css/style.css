@@ -6,6 +6,36 @@ body {
     background: #fff;
 }
 
+.input-an{
+
+    border: none;
+    border-radius: 0px;
+    padding: 15px;
+
+}
+
+.input-an:focus{
+    box-shadow: none;
+}
+
+select.input-an{
+    padding: 0px 15px;
+}
+
+input[type='email'].input-an, input[type='text'].input-an,input[type='tel'].input-an,input[type='password'].input-an, select.input-an
+ {
+    background: rgba(240,240,240,.9);
+    color: black !important;
+}
+button.input-an{
+  background: #c80000 !important;
+  border-radius: 15px !important;
+}
+button.input-an-2{
+  background: #F5F5F5 !important;
+  border-radius: 15px !important;
+  color: black !important;
+}
 
 
 /* h1-h6 */
@@ -899,7 +929,7 @@ a:hover {
 .prices-block {
   background: #F6F6F6;
   padding: 60px 0 40px;
-  height: 90%;
+ 
   min-height: 90%;
 }
 .pricing-item {

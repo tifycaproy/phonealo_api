@@ -7,9 +7,8 @@
     <form action="userRegister"  method="post">
         <!-- 
         <input name="APIKEY" VALUE="da39a3ee5e6b4b0d3255bfef95601890afd80709" type="hidden">
-        --
         -->>
-        <input name="APIKEY" VALUE="c2fa6476b99184470ddd93427cc106cc22a07855" type="hidden">
+        <input name="APIKEY" VALUE="bbfe5fbe0412e10fe8d4b1c13f50eb5848e25a8b" type="hidden">
         <div>
             <label>
                 Nombre: <input name="name" type="text">

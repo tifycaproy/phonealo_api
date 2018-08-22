@@ -122,7 +122,7 @@ class usuario extends base {
             'auth_key' => 'vIRoC5gGSXQ4YrKiJZzE1i49FOccRbOc',
             'from' => 'CALL53',
             'to' => $this->data['usu_country_prefix'].$this->data['usu_mobile'],
-            'text' => 'La clave para activar CALL53 es:  '.$pin,
+            'text' => 'La clave para activar Phonealo es:  '.$pin,
             'id' => time()
         ), 'https');
 
@@ -135,7 +135,7 @@ class usuario extends base {
                 'clave' => 'b1gi6g14t8584ro',
                 'remitente' => 'CALL53',
                 'destinatarios' => $this->data['usu_country_prefix'].$this->data['usu_mobile'],
-                'texto' => 'La clave para activar CALL53 es:  '.$pin,
+                'texto' => 'La clave para activar Phonealo es:  '.$pin,
                 'ruta' => 5,
                 'alfabeto' => 0
             ));

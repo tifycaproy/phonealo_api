@@ -33,6 +33,14 @@ if (isset($_POST['Ds_SignatureVersion'])) {
         if (($response >= 0 and $response <= 99) or ($response == 900) or ($response == 400) ) {
             $response = $usu->impute_saldo($pay_data['pay_amount'], $pay_data['pay_cod']);
             if ($usu_data['usu_new'] == 1) {
+
+            ////////////////////////////////////////////////////////////////////////    
+            //08-2018 Ajuste para amigo. Buscar Referente para recarga adicional
+                $email = $usu_data['usu_email'];
+                $referente = $db->queryFirstRow('select * from pamigos where email_amigo= %s',$email);
+                $ref_usu_cod = $referente["usu_cod"];
+            //////////////////////////////////////////////////////////////////////////
+                
                 $response = $usu->impute_saldo($pay_data['pay_amount'], $pay_data['pay_cod']);
                 $db->update('usuario', array
                     (
@@ -40,7 +48,10 @@ if (isset($_POST['Ds_SignatureVersion'])) {
                     ),
                     'usu_cod = '.$usu_data['usu_cod']
                 );
-
+                ///////////////////////////////////////////////////////////////////////
+                //agregar saldo referente
+                $response = $usu->impute_saldo($pay_data['pay_amount'],  $ref_usu_cod);
+                ///////////////////////////////////////////////////////////////////////
             }
             $decoded = json_decode($response);
 

@@ -13,13 +13,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <meta content="Aplicación de llamadas para Cuba" name="description">
-    <meta content="Cuba, LLamadas, Baratas, Bajo Precio" name="keywords">
+    <meta content="Aplicación de llamadas internacionales" name="description">
+    <meta content="Cuba, Ecuador, LLamadas, Baratas, Bajo Precio" name="keywords">
     <meta content="Apel Global" name="author">
 
-    <meta property="og:site_name" content="Phonealo - Llamadas a Cuba a 0.46 REALES">
+    <meta property="og:site_name" content="Phonealo - Llamadas baratas internacionales">
     <meta property="og:title" content="Phonealo">
-    <meta property="og:description" content="LLamadas a Cuba a 0,46">
+    <meta property="og:description" content="LLamadas baratas internacionales">
     <meta property="og:type" content="article∫">
     <meta property="og:image" content="http://www.phonealo.com/images/ic_launcher.png"><!-- link to image for socio -->
     <meta property="og:url" content="www.phonealo.com">

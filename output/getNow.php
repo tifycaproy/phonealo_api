@@ -11,7 +11,7 @@
             <div class="row">
 
                 <h3>
-                    Phonealo solo está disponible para descargar desde un movil con Android o Iphone IOS
+                    Phonealo solo está disponible para descargar desde un dispositivo Android o IOS
                 </h3>
 
 

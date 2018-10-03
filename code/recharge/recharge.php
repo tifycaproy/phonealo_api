@@ -1,4 +1,6 @@
 <?php
+
+
 if (have_value(ppost('inisession')) && ppost('inisession') == 'PorMisPerras-17') {
     $_SESSION['recargador'] = 'recargando';
     redirect('recharge');

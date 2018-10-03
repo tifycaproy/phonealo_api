@@ -58,7 +58,7 @@ $db->insert('log', array (
     Conectando con nuestro banco ...
 </h3>
 <div style="display: none">
-    <form name="frm" action="https://sis.redsys.es/sis/realizarPago" method="POST" >
+    <form name="frm" action="https://sis.redsys.es/sis/realizarPago" method="POST"> 
         Ds_Merchant_SignatureVersion <input type="text" name="Ds_SignatureVersion" value="<?php echo $version; ?>"/></br>
         Ds_Merchant_MerchantParameters <input type="text" name="Ds_MerchantParameters" value="<?php echo $params; ?>"/></br>
         Ds_Merchant_Signature <input type="text" name="Ds_Signature" value="<?php echo $signature; ?>"/></br>

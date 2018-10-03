@@ -1,9 +1,9 @@
 <?php
 /**
  * Aqui va todo el meollo
- * User: alx
- * Date: 07/03/15
- * Time: 12:14
+ * User: Apel Global GSMA
+ * Date: 01/08/18
+ * Time: 00:00
  */
 session_start();
 //error_reporting(E_ALL ^ E_NOTICE);

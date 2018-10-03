@@ -2,9 +2,9 @@
 
 /**
  * Created by PhpStorm.
- * User: alx
- * Date: 21/03/15
- * Time: 12:01
+ * User: Apel Global GSMA
+ * Date: 01/08/18
+ * Time: 00:00
  */
 
 namespace CompayPhone;
@@ -119,8 +119,8 @@ class usuario extends base {
 
 
         $sms_path = fullpath('api.smsarena.es/http/sms.php', array (
-            'auth_key' => 'vIRoC5gGSXQ4YrKiJZzE1i49FOccRbOc',
-            'from' => 'CALL53',
+            'auth_key' => 'dLVik8N5OGgFYlOR219aZqlFE9pFXsv0',
+            'from' => 'Phonealo',
             'to' => $this->data['usu_country_prefix'].$this->data['usu_mobile'],
             'text' => 'La clave para activar Phonealo es:  '.$pin,
             'id' => time()
@@ -133,7 +133,7 @@ class usuario extends base {
             $sms_path = fullpath('services.premiumnumbers.es:8080/push/sendPush', array (
                 'idCliente' => 81,
                 'clave' => 'b1gi6g14t8584ro',
-                'remitente' => 'CALL53',
+                'remitente' => 'Phonealo',
                 'destinatarios' => $this->data['usu_country_prefix'].$this->data['usu_mobile'],
                 'texto' => 'La clave para activar Phonealo es:  '.$pin,
                 'ruta' => 5,

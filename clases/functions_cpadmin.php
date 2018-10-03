@@ -51,7 +51,15 @@ function dropDownImportesRecarga ($importe) {
         20 => '20 €',
         50 => '50 €',
         100 => '100 €',
+        200 => '200 €',
+        300 => '300 €',
+        400 => '400 €',
         500 => '500 €',
+        600 => '600 €',
+        700 => '700 €',
+        800 => '800 €',
+        900 => '900 €',
+        1000 => '1000 €',
     );
     return dropdownGeneric('importes', $a, $importe, '', true);
 }
@@ -81,10 +89,9 @@ function envia_mail($subject, $mail_template, $data_mail, $destinatarios = 0, $f
             $mail->AddAddress($address);
         }
     }
-
-    //$mail->addCC('alexcruzruiz@gmail.com');
+// Aqui enviamos el mail para estar pendiente
+    
     $mail->addBCC('gestion.mam@gmail.com');
-    //$mail->addBCC('alexcruzruiz@gmail.com');
 
     if (is_array($files)) {
         foreach ($files as $filepath) {

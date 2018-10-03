@@ -1,4 +1,5 @@
 <?php
+
 require_once (file_path.'lib/redsys/apiRedsys.php');
 
 $view = 'recarga';
@@ -8,7 +9,7 @@ $db->insert('log', array (
     'info' => serialize($_POST)
 ));
 
-if (isset($_POST['Ds_SignatureVersion'])) {
+if (isset($_POST['Ds_SignatureVersion']) ) {
 
     $db->insert('log', array (
         'action' => 'Retorno de pago REDSYS',
@@ -19,19 +20,21 @@ if (isset($_POST['Ds_SignatureVersion'])) {
     $payback = new RedsysAPI;
     $kc = '2yKKlrw9UsplPBT3O5aIUfUrEgrZjvs4'; //Clave recuperada de CANALES
     $MySignature = $payback->createMerchantSignatureNotif($kc, $p['Ds_MerchantParameters']);
-
+               
     if ($MySignature == $p['Ds_Signature']) {
         // La firma es buena
         $decodec = json_decode($payback->decodeMerchantParameters($p['Ds_MerchantParameters']));
         $pedidotpv = $payback->getParameter('Ds_Order');
         $pay_data = $db->queryFirstRow('select * from payments where pay_pedidotpv = %s', $pedidotpv);
-        $usu = new \CompayPhone\usuario($pay_data['pay_usu_cod']);
+//        $usu = new \CompayPhone\usuario($pay_data['pay_usu_cod']); 
+        $usu = new \CompayPhone\usuario(41);
         $usu->load();
         $usu_data = $usu->data;
 
         $response = (int) $payback->getParameter('Ds_Response');
         if (($response >= 0 and $response <= 99) or ($response == 900) or ($response == 400) ) {
-            $response = $usu->impute_saldo($pay_data['pay_amount'], $pay_data['pay_cod']);
+//            $response = $usu->impute_saldo($pay_data['pay_amount'], $pay_data['pay_cod']);
+            $response = $usu->impute_saldo(1, $pay_data['pay_cod']); 
             if ($usu_data['usu_new'] == 1) {
 
             ////////////////////////////////////////////////////////////////////////    
@@ -39,19 +42,38 @@ if (isset($_POST['Ds_SignatureVersion'])) {
                 $email = $usu_data['usu_email'];
                 $referente = $db->queryFirstRow('select * from pamigos where email_amigo= %s',$email);
                 $ref_usu_cod = $referente["usu_cod"];
+
             //////////////////////////////////////////////////////////////////////////
                 
-                $response = $usu->impute_saldo($pay_data['pay_amount'], $pay_data['pay_cod']);
+//                $response = $usu->impute_saldo($pay_data['pay_amount'], $pay_data['pay_cod']);
+                $response = $usu->impute_saldo(2,  $pay_data['pay_cod']);
                 $db->update('usuario', array
                     (
                         'usu_new' => 0
                     ),
                     'usu_cod = '.$usu_data['usu_cod']
                 );
-                ///////////////////////////////////////////////////////////////////////
-                //agregar saldo referente
-                $response = $usu->impute_saldo($pay_data['pay_amount'],  $ref_usu_cod);
-                ///////////////////////////////////////////////////////////////////////
+                 
+               $usu2 = new \CompayPhone\usuario($ref_usu_cod);
+               $usu2->load();
+               $usu2_data = $usu2->data;
+               $monto_recarga = 5;
+               $response2 = $usu2->impute_saldo($monto_recarga, $ref_usu_cod);
+
+               $card_id = $usu2_data['usu_billing_cardid'];
+               $card_secure_id = MyEncriptSHA1($card_id);
+
+               $db->insert('payments', array (
+                  'pay_usu_cod' => $usu2_data['usu_cod'],
+                  'pay_timestamp' => substr($card_secure_id, 40),
+                  'pay_amount' => $monto_recarga
+               ));
+
+               $pay_cod = $db->insertId();
+
+               $pedidotpv =  $usu2_data['usu_cod'].'0'.$pay_cod;
+               $db->update('payments', array ('pay_pedidotpv' => $pedidotpv), 'pay_cod = %s', $pay_cod);
+
             }
             $decoded = json_decode($response);
 
@@ -100,6 +122,23 @@ if (isset($_POST['Ds_SignatureVersion'])) {
             envia_mail('Ups, no hemos podido recargar tu cuenta :-( ', $template, $usu_data, $destinatarios );
 
         }
+        $decoded2 = json_decode($response2);
+        if ($decoded2->{credit}) {
+            $db->update('payments',
+                array
+                (
+                   'pay_ok' => 1,
+                   'pay_notified' => factual_datetime_mysql(),
+                   'pay_tpvresponse' => (int) $payback->getParameter('Ds_Response')
+                ),'pay_cod = %s', $ref_usu_cod);
+                $usu2_data = $usu->data;
+                $destinatarios = array (
+                    $usu2_data['usu_email']
+                );
+                $usu2_data['credit'] = number_format($decoded2->{credit}, 2);
+                $usu2_data['pay_amount'] = $monto_recarga;
+                envia_mail('Todo Ok, Recaarga por Referido, Phonealo ! ', $template, $usu2_data, $destinatarios );
+        }
 
     }
 
@@ -107,7 +146,9 @@ if (isset($_POST['Ds_SignatureVersion'])) {
 
 }
 
+
 if (pget('faildata') && is_null(ppost('mobile'))) {
+
 
     $shaID = MyDeCriptSHA1(substr(pget('faildata'), 0 , -1));
     $pay_data = $db->queryFirstRow('select * from payments where sha1(pay_cod) = %s', $shaID);
@@ -171,8 +212,9 @@ if (pget('faildata') && is_null(ppost('mobile'))) {
 
 
 } else {
+
     $amount = pget('amount');
     $mobile = pget('mobile');
-    $country = pget('country');
+    $country = pget('country'); 
 
 }
